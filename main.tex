@@ -189,19 +189,47 @@
 \end{frame}
 
 \begin{frame}{NL2SQL Translation Methods}
-    \textit{A. Encoding Strategy}
+    \textit{A. Encoding Strategy}:transforming NL and database schema into a structured format suitable for language model processing.
+    \begin{figure}
+        \includegraphics[width=.55\linewidth]{assets/encoding.png}
+    \end{figure}
+    \begin{itemize}
+        \item[1)]Sequential Encoding Strategy: Both the NL and the database schema are treated as token sequences.
+        \item[2)]Graph-based Encoding Strategy: Represents both NL and database schema as interconnected graphs.
+        \item[3)]Separate Encoding Strategy: Different parts of the NL are encoded separately and then combined to form the final SQL.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{NL2SQL Translation Methods}
-    \textit{B. Decoding Strategy}
+    \textit{B. Decoding Strategy}: Transforming encoder-generated representations into SQL.
+    \begin{figure}
+        \includegraphics[width=.55\linewidth]{assets/decoding.png}
+    \end{figure}
+    \begin{itemize}
+        \item[1)]Greedy Search-based Decoding: Select the token with the highest probability at each decoding step.
+        \item[2)]Beam Search-based Decoding Strategy: Retains multiple candidate sequencesand expands the top-k tokens with the highest probabilities until a complete output sequence is generated.
+        \item[3)]Constraint-aware Incremental Decoding Strategy: As the model predicts the next token, it also checks the syntactic correctness of the partial query .
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{NL2SQL Translation Methods}
     \textit{C. Task-specific Prompt Strategy}
+
+    \begin{itemize}
+        \item[1)]Chain-of-Thought (CoT) Prompting: Use COT process to do entity and context retrieval, schema selection, SQL generation, and revision.
+        \item[2)]Decomposition Strategy: divides the NL2SQL task into sequential subtasks, allowing each sub-module to concentrate on a specific generation step.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{NL2SQL Translation Methods}
     \textit{D. Intermediate Representation for NL2SQL Translation}
+    \begin{figure}
+        \includegraphics[width=.55\linewidth]{assets/intermediate.png}
+    \end{figure}
+    \begin{itemize}
+        \item[1)]SQL-like syntax language: Use simplified SQL-like structure.
+        \item[2)]SQL-like sketch structure: Use SQL-like sketches that mirror SQL structure for parsing, enabling diverse NL queries to be mapped into a specific sketch space.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Postprocessing Strategies for NL2SQL}
