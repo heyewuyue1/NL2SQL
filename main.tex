@@ -24,7 +24,7 @@
     School of Information \\
     Renmin University of China % Your institution for the title page
 }
-\date{\today} % Date, can be changed to a custom date
+\date{March 27, 2025} % Date, can be changed to a custom date
 
 %----------------------------------------------------------------------------------------
 %    PRESENTATION SLIDES
@@ -141,8 +141,8 @@
 \begin{frame}{Preprocessing Strategies for NL2SQL}
     \textit{A. Schema Linking}
     \begin{itemize}
-        \item String Matching-based: Identifies matches when candidates are identical or when one is a substring of the other. -\alert{struggle with synonyms and vocabulary variations}.
-        \item Neural Network-based: Use neural networks to learn the relationship between the NL and the DB schema. -\alert{struggle to generalize across databases}.
+        \item String Matching-based: Identifies matches when candidates are identical or when one is a substring of the other. -\alert{synonyms and vocabulary variations}.
+        \item Neural Network-based: Use neural networks to learn the relationship between the NL and the DB schema. -\alert{hard to generalize across databases}.
         \item In-Context Learning: Utilizes LLMs’ ability to understand complex language patterns and relationships within data schemas. -\alert{computationally expensive}.
         \begin{example}
             Given the database schema and question, perform the following actions:
@@ -297,18 +297,18 @@
 \textbf{The open NL2SQL problems: }
 \begin{itemize}
     \item Database retrieval: find relevant databases to access.
-    \item Handling heterogeneous schemas:
-    \item Answer aggregation:
-    \item Domain Adaption:
-    \item Scalability and efficiency:
+    \item Handling heterogeneous schemas: integrating data with varied structures and terminologies
+    \item Answer aggregation: inferring final answers from multiple SQL queries 
+    \item Domain Adaption: generalizing models across domains
+    \item Scalability and efficiency: managing large data volumes while maintaining performance
 \end{itemize}
 \textbf{Developing cost-effective NL2SQL methods}:
 
 \textbf{Make NL2SQL solutions trustworthy}:
 \begin{itemize}
-    \item Interpreting NL2SQL solutions:
-    \item NL2SQL debugging tools:
-    \item Interactive NL2SQL Tools:
+    \item Interpreting NL2SQL solutions: Understanding the reasoning behind a NL2SQL model’s performance
+    \item NL2SQL debugging tools: a visual debugger for NL2SQL
+    \item Interactive NL2SQL Tools: focus on each part before assembling the whole SQL.
 \end{itemize}
 
 \end{frame}
